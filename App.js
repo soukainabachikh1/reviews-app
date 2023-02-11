@@ -2,6 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import * as Font from 'expo-font'
 import Home from './Pages/Home';
+import { useState } from 'react';
+import {AppLoading} from 'expo'
 
 const getFont = () => {
   return Font.loadAsync({
@@ -10,9 +12,18 @@ const getFont = () => {
 }
 
 export default function App() {
-  return (
-    <Home/>
-  );
+const [fontsLoaded, setFontLoaded] = useState(false);
+
+  if(fontsLoaded){
+    return (
+      <Home/>
+    );
+  } else{
+    return(
+      <AppLoading
+    )
+  }
+  
 }
 
 const styles = StyleSheet.create({
