@@ -1,12 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import * as Font from 'expo-font'
+import Home from './Pages/Home';
+
+const getFont = () => {
+  return Font.loadAsync({
+    'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf')
+  })
+}
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Home/>
   );
 }
 
